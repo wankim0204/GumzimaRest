@@ -11,10 +11,6 @@ public interface ProductService {
 
 	public List searchProduct(SearchText searchText);
 	
-	public List searchProduct(String text);
-	
-	public List selectByTopcategory(int topcategory_id);
-	
 	public Product select(int product_id);
 	
 	public void regist(FileManager fileManager, Product product);

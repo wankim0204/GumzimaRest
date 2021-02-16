@@ -1,7 +1,6 @@
 package com.gumzima.shopping.model.product.service;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -41,26 +40,6 @@ public class ProductServiceImpl implements ProductService{
 		}else {
 			return productDAO.searchProductByCategory(searchText);
 		}
-	}
-	
-	public List searchProduct(String text) {
-		return productDAO.searchProduct(text);
-	}
-	
-	public List selectByTopcategory(int topcategory_id) {
-		List<Product> list=productDAO.selectAll();
-		List<Product> productList=new ArrayList<Product>();
-		if(topcategory_id==0) {
-			productList=list;
-		}else {
-			for(int i=0;i<list.size();i++) {
-				Product product=list.get(i);
-				if(product.getP_subcategory().getP_topcategory_id()==topcategory_id) {
-					productList.add(product);
-				}
-			}
-		}
-		return productList;
 	}
 	
 	@Override

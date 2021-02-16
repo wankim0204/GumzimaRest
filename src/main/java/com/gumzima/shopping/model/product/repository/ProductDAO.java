@@ -7,10 +7,8 @@ import com.gumzima.shopping.model.domain.SearchText;
 
 public interface ProductDAO {
 	public List selectAll();
-		
-	public List searchProduct(SearchText searchText);
 	
-	public List searchProduct(String text);
+	public List searchProduct(SearchText searchText);
 
 	public List searchProductByCategory(SearchText searchText);
 	
