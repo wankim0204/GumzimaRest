@@ -4,6 +4,7 @@
 <!-- 상품과 연계된 부모를 같이 가져오자, 상품입장에서는 부모와 1:1 관계이다(association) -->
 	<resultMap id="productSubcategoryMap" type="Product">
 		<id column="product_id" property="product_id"/>	
+		<result column="p_subcategory_id" property="p_subcategory_id"/>
 		<result column="product_name" property="product_name"/>
 		<result column="price" property="price"/>
 		<result column="stock" property="stock"/>
@@ -19,6 +20,10 @@
 	</resultMap>
 	
 	<select id="selectAll" resultMap="productSubcategoryMap">
+		select * from product order by product_name asc
+	</select>
+	
+	<select id="restSelectAll" resultType="Product">
 		select * from product order by product_name asc
 	</select>
 	
@@ -42,7 +47,7 @@
 		select * from product where p_subcategory_id in 
 			<foreach collection="subId" item="subId" open="(" close=")" separator=","> #{subId}</foreach> and product_name like '%'||#{text}||'%' 
 	</select>
-	
+		
 	<!-- 상품 상세보기 -->
 	<resultMap id="joinScoreImage" type="Product">
 		<id column="product_id" property="product_id"/>	

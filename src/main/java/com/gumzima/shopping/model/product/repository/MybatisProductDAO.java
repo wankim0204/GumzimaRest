@@ -19,9 +19,13 @@ public class MybatisProductDAO implements ProductDAO{
 	public List selectAll() {
 		return sqlSessionTemplate.selectList("Product.selectAll");
 	}
-	
+		
 	public List searchProduct(SearchText searchText) {
 		String text=searchText.getText();
+		return sqlSessionTemplate.selectList("Product.searchProduct", text);
+	}
+	
+	public List searchProduct(String text) {
 		return sqlSessionTemplate.selectList("Product.searchProduct", text);
 	}
 	

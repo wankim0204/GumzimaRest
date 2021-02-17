@@ -10,6 +10,7 @@ import lombok.Data;
 public class Product {
 	private int product_id;
 	private P_subcategory p_subcategory;
+	private int p_subcategory_id;
 	private String product_name;
 	private int price;
 	private String detail;

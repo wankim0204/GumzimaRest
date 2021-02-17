@@ -5,7 +5,7 @@ import java.util.List;
 import com.gumzima.shopping.model.domain.P_topcategory;
 
 public interface P_topcategoryService {
-public List selectAll();
+	public List selectAll();
 	
 	public P_topcategory select(int p_topcategory_id);
 	
